@@ -7,8 +7,8 @@ export const CHARACTERS = [
     hp: 90,
     attack: 22,
     speed: 18,
-    attackName: "Pulso Sônico",
-    pattern: "feixe" // thin line beam
+    attackName: "Sonic Pulse",
+    pattern: "beam" // thin line beam
   },
   {
     id: "spock",
@@ -18,8 +18,8 @@ export const CHARACTERS = [
     hp: 100,
     attack: 24,
     speed: 16,
-    attackName: "Tiro de Phaser",
-    pattern: "ponto" // compact projectile
+    attackName: "Phaser Shot",
+    pattern: "dot" // compact projectile
   },
   {
     id: "marty",
@@ -29,8 +29,8 @@ export const CHARACTERS = [
     hp: 85,
     attack: 20,
     speed: 20,
-    attackName: "Arco de fluxo",
-    pattern: "ziguezague" // zigging arc line
+    attackName: "Flux Arc",
+    pattern: "zig" // zigging arc line
   },
   {
     id: "t800",
@@ -40,8 +40,8 @@ export const CHARACTERS = [
     hp: 120,
     attack: 26,
     speed: 12,
-    attackName: "Endo Explodido",
-    pattern: "Explodido" // short-range burst (multiple dots)
+    attackName: "Endo Burst",
+    pattern: "burst" // short-range burst (multiple dots)
   }
 ];
 
