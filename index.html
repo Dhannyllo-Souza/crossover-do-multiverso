@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crossover Multiverso - Jogo de Cartas de Batalha</title>
+    <!-- ...existing content... -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <!-- ...existing content... -->
+    <header class="app-header" role="banner">
+        <h1>Crossover Multiverso</h1>
+        <p class="subtitle">Jogo de cartas de batalha com ataques visuais</p>
+    </header>
+
+    <main class="app-main" role="main">
+        <section class="deck-select" aria-label="Seleção de personagens">
+            <div class="roster" id="roster"></div>
+            <aside class="selection-panel">
+                <div>
+                    <h2>Equipe A</h2>
+                    <div class="team" id="teamA"></div>
+                </div>
+                <div>
+                    <h2>Equipe B</h2>
+                    <div class="team" id="teamB"></div>
+                </div>
+                <button class="primary" id="startBattle" disabled>Iniciar Batalha</button>
+            </aside>
+        </section>
+
+        <section class="battle-arena" id="arena" hidden aria-label="Arena de batalha">
+            <div class="side side-a">
+                <div class="active-card" id="activeA"></div>
+            </div>
+            <div class="arena-center">
+                <div class="turn-indicator" id="turnIndicator">Vez: —</div>
+                <div class="controls">
+                    <button class="primary" id="attackBtn">Atacar</button>
+                    <button id="switchBtn">Trocar</button>
+                    <button id="resetBtn">Reiniciar</button>
+                </div>
+            </div>
+            <div class="side side-b">
+                <div class="active-card" id="activeB"></div>
+            </div>
+            <div class="projectile-layer" id="projectileLayer" aria-hidden="true"></div>
+        </section>
+    </main>
+
+    <footer class="app-footer" role="contentinfo">
+        <small>Universos: Doctor Who, Star Trek, De Volta para o Futuro, O Exterminador do Futuro. Prototipo não oficial.</small>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+    <!-- ...existing content... -->
+</body>
+</html>
