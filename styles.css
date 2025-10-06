@@ -2,8 +2,8 @@
 :root {
   --bg: hsl(27, 83%, 48%);
   --text: #ec7017;
-  --muted: #020202;
-  --line: #101010;
+  --muted: #ec7017;
+  --line: #f5f0f0;
   --accent: #fa1717;
 }
 
@@ -31,7 +31,7 @@ body {
   display: grid;
   gap: 10px;
   transition: transform 150ms ease, box-shadow 150ms ease;
-  background: #fff;
+  background:#000;
 }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
 .card h3 { margin: 0; font-weight: 700; }
