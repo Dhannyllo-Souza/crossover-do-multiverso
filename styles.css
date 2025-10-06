@@ -2,8 +2,8 @@
 :root {
   --bg: hsl(27, 83%, 48%);
   --text: #ec7017;
-  --muted: #d0d314;
-  --line: #e5e5e5;
+  --muted: #020202;
+  --line: #101010;
   --accent: #fa1717;
 }
 
@@ -41,7 +41,7 @@ body {
 .statline { display: flex; justify-content: space-between; font-size: 14px; }
 .actions { display: flex; gap: 8px; }
 button {
-  appearance: none; border: 1px solid var(--line); background: #fff; color: var(--text);
+  appearance: none; border: 1px solid var(--line); background: #000; color: var(--text);
   padding: 8px 12px; border-radius: 10px; cursor: pointer; transition: background 120ms ease, transform 120ms ease;
 }
 button:hover { background: #f7f7f7; }
