@@ -44,4 +44,3 @@ export const CHARACTERS = [
     pattern: "burst" // short-range burst (multiple dots)
   }
 ];
-
