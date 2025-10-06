@@ -1,4 +1,10 @@
 import { CHARACTERS } from "./data.js";
+const SOUND_FILES = {
+  "Sonic Pulse": "sonic_pulse.mp3",
+  "Phaser Shot": "phaser_shot.mp3",
+  "Flux Arc": "flux_arc.mp3",
+  "Endo Burst": "endo_burst.mp3"
+};
 /* ...existing code... */
 
 // State
@@ -14,6 +20,8 @@ const switchBtn = document.getElementById("switchBtn");
 const resetBtn = document.getElementById("resetBtn");
 const turnInd = document.getElementById("turnIndicator");
 const layer = document.getElementById("projectileLayer");
+const SOUNDS = Object.fromEntries(Object.entries(SOUND_FILES).map(([k,v]) => [k, Object.assign(new Audio(v), {preload:"auto", volume:0.6})]));
+function playSound(name){ const a = SOUNDS[name]; if (a) { a.currentTime = 0; a.play().catch(()=>{}); } }
 
 const state = {
   roster: [...CHARACTERS],
@@ -118,6 +126,7 @@ function startBattle() {
   };
   document.querySelector(".deck-select").hidden = true;
   arenaEl.hidden = false;
+  attackBtn.disabled = false; switchBtn.disabled = state.battle.teamA.length <= 1 && state.battle.teamB.length <= 1;
   renderActive();
   updateTurnText();
 }
@@ -266,20 +275,13 @@ function performAttack() {
   const defTeam = state.battle.turn === "A" ? state.battle.teamB : state.battle.teamA;
   const attacker = atkTeam[0];
   const defender = defTeam[0];
-
-  attackBtn.disabled = true;
-
+  attackBtn.disabled = true; playSound(attacker.attackName);
   animateAttack(attacker.pattern, () => {
     defender.hpCur -= attacker.attack;
     clampHealth(defender);
     renderActive();
-
     const over = checkKO();
-    if (!over) {
-      state.battle.turn = state.battle.turn === "A" ? "B" : "A";
-      updateTurnText();
-      attackBtn.disabled = false;
-    }
+    if (!over) { renderActive(); state.battle.turn = state.battle.turn === "A" ? "B" : "A"; updateTurnText(); attackBtn.disabled = false; }
   });
 }
 
@@ -293,4 +295,5 @@ resetBtn.addEventListener("click", () => location.reload());
 renderRoster();
 renderTeams();
 validateStart();
+attackBtn.disabled = true; switchBtn.disabled = true;
 /* ...existing code... */

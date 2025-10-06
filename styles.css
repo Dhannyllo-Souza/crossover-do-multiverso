@@ -1,17 +1,17 @@
 /* ...existing styles... */
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #6b6b6b;
+  --bg: hsl(27, 83%, 48%);
+  --text: #ec7017;
+  --muted: #d0d314;
   --line: #e5e5e5;
-  --accent: #000000;
+  --accent: #fa1717;
 }
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: var(--bg);
+  background: url('background-pattern.png') fixed;
   color: var(--text);
   font-family: "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
